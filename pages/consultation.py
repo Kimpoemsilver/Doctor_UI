@@ -5,7 +5,6 @@ import altair as alt
 import sys, os
 
 # DB 유틸 불러오기
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
 from db_utils import fetch_all, execute_query
 
 DB_PATH = "DataBase/project_db2.db"
