@@ -4,16 +4,15 @@ import pandas as pd
 import altair as alt
 import sys, os
 
-# DB 유틸 불러오기
+st.set_page_config(page_title="Home", page_icon="💊", layout="wide")
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
 from DataBase.db_utils import fetch_all, execute_query
 
 DB_PATH = "DataBase/project_db2.db"
 
-st.set_page_config(page_title="Home", page_icon="💊", layout="wide")
-
-if not st.session_state.get("is_logged_in", True):
-    st.error("잘못된 접근입니다.")
+if not st.session_state.get("patient_id"):
+    st.warning("⚠️ 환자를 먼저 선택하세요.")
     st.stop()
 
 # patient_id 가져오기

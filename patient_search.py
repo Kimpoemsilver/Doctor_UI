@@ -83,9 +83,11 @@ if results:
         st.session_state["patient_name"] = name
         st.session_state["patient_dob"] = dob
         st.session_state["patient_first_visit"] = first_visit
+        st.session_state["go_consultation"] = True
 
-        st.success(f"✅ {name} 환자가 선택되었습니다. 페이지를 이동합니다...")
-        st.switch_page(NEXT_PAGE_PATH)
+        # st.switch_page(NEXT_PAGE_PATH) 대신
+        st.success(f"✅ {name} 환자가 선택되었습니다.")
+        st.experimental_rerun()
 
 else:
     st.warning("검색된 환자가 없습니다.")
