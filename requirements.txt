@@ -48,3 +48,4 @@ wheel==0.45.1
 google-cloud-translate==2.0.1
 transformers==4.53.0
 torch==2.5.1
+git+https://github.com/Kimpoemsilver/DataBase.git
